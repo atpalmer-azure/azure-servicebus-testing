@@ -17,7 +17,7 @@ service = Azure::ServiceBus::ServiceBusService.new(
   service.send_queue_message('queue1', "Item #{n}")
 end
 
-while true
+loop do
   print "Message Count: ", service.get_queue('queue1').message_count, "\n"
   print "Message: "
   message = gets.chomp

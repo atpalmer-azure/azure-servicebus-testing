@@ -12,7 +12,7 @@ service = Azure::ServiceBus::ServiceBusService.new(
 )
 
 last = nil
-while true
+loop do
   print "Message Count: ", service.get_queue('queue1').message_count, "\n"
   received = service.receive_queue_message('queue1')
   puts received.body
